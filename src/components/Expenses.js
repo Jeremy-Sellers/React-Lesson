@@ -1,10 +1,11 @@
 import './Expenses.css';
 import ExpenseItem from "./ExpenseItem";
+import Card from "./Card";
 
 function Expenses(props){
 
     return (
-        <div className="expenses">
+        <Card className="expenses">
             {/*References ExpenseItem component */}
             {/* "props" from parameter ".items" from App.js attribute [x].value is grabbed from the items values passed in from App.js */}
             <ExpenseItem title={props.items[0].title}
@@ -19,7 +20,7 @@ function Expenses(props){
             <ExpenseItem title={props.items[3].title}
                          amount={props.items[3].dollarAmount}
                          date={props.items[3].date}></ExpenseItem>
-        </div>
+        </Card>
     )
 }
 
