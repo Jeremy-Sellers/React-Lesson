@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Expenses from "./components/Expenses";
+import Expenses from "./components/Expenses/Expenses";
 
 //This function is what is being imported into index.js and then displayed in the div chosen by id="root" from index.html
 function App() {
