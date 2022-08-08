@@ -12,6 +12,10 @@ function App() {
     {id:4,title:'soap',dollarAmount:18,date: new Date(2020,11,19)},
   ];
 
+  const addExpenseHandler = expense => {
+    console.log('In app.js')
+    console.log(expense);
+  };
 
   return (
     <div className="App">
@@ -23,7 +27,7 @@ function App() {
         <p> Hello, World!</p>
         {/* References Expenses component and sets "items" from "props.items..." and sets each value based on expenses array above */}
         {/*Value of items attribute is expenses array*/}
-        <NewExpense></NewExpense>
+        <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
         <Expenses items={expenses}/>
         <a
           className="App-link"
