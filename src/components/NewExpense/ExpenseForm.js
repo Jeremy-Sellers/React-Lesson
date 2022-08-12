@@ -7,19 +7,19 @@ function ExpenseForm(props){
     const [enteredDate,setEnteredDate] = useState('');
 
 
-    function titleChangeHandler(event){
+    const titleChangeHandler = (event) => {
         setEnteredTitle(event.target.value)
     }
 
-    function amountChangeHandler(event){
+    const amountChangeHandler = (event) => {
         setEnteredAmount(event.target.value)
     }
 
-    function dateChangeHandler(event){
+    const dateChangeHandler = (event) => {
         setEnteredDate(event.target.value)
     }
 
-    function submitHandler(event){
+    const submitHandler = (event) => {
         event.preventDefault();
 
         const expenseData = {
@@ -33,9 +33,9 @@ function ExpenseForm(props){
 
         //using props and passes expenseData to NewExpense to use in function created there
         props.onSaveExpenseData(expenseData);
-        setEnteredAmount('')
-        setEnteredTitle('')
-        setEnteredDate('')
+        setEnteredTitle('');
+        setEnteredAmount('');
+        setEnteredDate('');
     };
 
     return ( <form onSubmit={submitHandler}>
@@ -60,12 +60,14 @@ function ExpenseForm(props){
                        value={enteredDate}
                        onChange={dateChangeHandler}/>
             </div>
+        </div>
 
             <div className="new-expense__actions">
                 <button type="submit">Add Expense</button>
             </div>
-        </div>
-            </form>)
-}
+
+            </form>
+    );
+};
 
 export default ExpenseForm;

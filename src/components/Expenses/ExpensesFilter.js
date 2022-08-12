@@ -6,7 +6,6 @@ const ExpensesFilter = (props) => {
     function dropdownChangeHandler(event){
         //props.onChangeFilter references the function from parent Expenses.js and uses value from <select> element below
         props.onChangeFilter(event.target.value);
-        //
     }
 
     return (
@@ -15,7 +14,7 @@ const ExpensesFilter = (props) => {
                 <label>Filter by year</label>
                 <select
                     //sets default value to selectedYear from Expenses.js
-                    value={props.selectedYear}
+                    value={props.selected}
                     onChange={dropdownChangeHandler}>
                     <option value='2022'>2022</option>
                     <option value='2021'>2021</option>
