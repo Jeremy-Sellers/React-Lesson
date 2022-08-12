@@ -12,6 +12,10 @@ const Expenses = (props) => {
         setFilteredYear(selectedYear);
     }
 
+    const filteredExpenses = props.items.filter(expense => {
+        return expense.date.getFullYear().toString() === filteredYear;
+    })
+
     return (
         <div>
             <Card className="expenses">
@@ -23,8 +27,10 @@ const Expenses = (props) => {
 
             {/*References ExpenseItem component */}
             {/* "props" from parameter ".items" from App.js attribute [x].value is grabbed from the items values passed in from App.js */}
-            {props.items.map((expense) => (
-            <ExpenseItem title={expense.title}
+            {filteredExpenses.map((expense) => (
+            <ExpenseItem
+            key={expense.id}
+            title={expense.title}
             amount={expense.amount}
             date={expense.date}
             />))}
