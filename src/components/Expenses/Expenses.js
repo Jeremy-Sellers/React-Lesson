@@ -16,6 +16,18 @@ const Expenses = (props) => {
         return expense.date.getFullYear().toString() === filteredYear;
     })
 
+    let expensesContent = <p>No Expenses found.</p>
+
+    if (filteredExpenses.length > 0){
+        expensesContent = filteredExpenses.map((expense) => (
+            <ExpenseItem
+                key={expense.id}
+                title={expense.title}
+                amount={expense.amount}
+                date={expense.date}
+            />));
+    }
+
     return (
         <div>
             <Card className="expenses">
@@ -27,13 +39,7 @@ const Expenses = (props) => {
 
             {/*References ExpenseItem component */}
             {/* "props" from parameter ".items" from App.js attribute [x].value is grabbed from the items values passed in from App.js */}
-            {filteredExpenses.map((expense) => (
-            <ExpenseItem
-            key={expense.id}
-            title={expense.title}
-            amount={expense.amount}
-            date={expense.date}
-            />))}
+            {expensesContent}
         </Card>
     </div>
     );
