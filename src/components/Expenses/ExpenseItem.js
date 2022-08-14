@@ -5,7 +5,8 @@ import React from 'react'
 
 const ExpenseItem = (props) => {
     return (
-        //Changing div element to "Card" gives the div an inner elements the Card.js file
+        <li>
+        {/*Changing div element to "Card" gives the div an inner elements the Card.js file*/}
         <Card  className="expense-item">
 
         {/*Formats date output using ExpenseDate component and uses date={props.date} to get info to format from Expenses.js*/}
@@ -19,6 +20,7 @@ const ExpenseItem = (props) => {
             <div className="expense-item__price">${props.amount}</div>
         </div>
         </Card>
+        </li>
     );
 }
 
