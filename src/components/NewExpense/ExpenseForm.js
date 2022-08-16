@@ -24,7 +24,7 @@ function ExpenseForm(props){
 
         const expenseData = {
             title: enteredTitle,
-            amount: enteredAmount,
+            amount: +enteredAmount,
             date: new Date(enteredDate + 'T00:00:00') //adding string fixes date from being entered as one day prior to chosen date
         }
 
